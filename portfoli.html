@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>portfoli | Python Full Stack Developer</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+/* ================= BASIC ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+.nav-links a {
+    color: #334155;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+
+/* ================= COMMON SECTION ================= */
+
+.section {
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: auto;
+    padding: 100px 30px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title p {
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.section-title h2 {
+    font-size: 42px;
+    color: #0f172a;
+}
+
+.section-title h2 span {
+    color: #2563eb;
+}
+
+
+/* ================= HOME ================= */
+
+.home {
+    min-height: 90vh;
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.home-content {
+    flex: 1;
+}
+
+.small-title {
+    color: #2563eb;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.home-content h1 {
+    font-size: 64px;
+    color: #0f172a;
+    margin: 10px 0;
+}
+
+.home-content h2 {
+    font-size: 32px;
+    color: #334155;
+    margin-bottom: 20px;
+}
+
+.home-content h2 span {
+    color: #2563eb;
+}
+
+.home-content > p {
+    max-width: 650px;
+    color: #64748b;
+    font-size: 18px;
+}
+
+.home-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 13px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    border: 2px solid #2563eb;
+    color: #2563eb;
+}
+
+.secondary-btn:hover {
+    background: #2563eb;
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.social-icons a {
+    color: #334155;
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #2563eb;
+}
+
+.home-image {
+    flex: 0 0 400px;
+}
+
+.image-circle {
+    width: 380px;
+    height: 380px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 5px solid rgb(11, 153, 209);
+    overflow: hidden;
+}
+
+.image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-container {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.about-content h3 {
+    font-size: 30px;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.about-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.about-info div {
+    background: #ffffff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border-left: 4px solid #2563eb;
+}
+
+.about-info strong {
+    display: block;
+    color: #0f172a;
+}
+
+.about-info span {
+    color: #64748b;
+}
+
+
+/* ================= SKILLS ================= */
+
+.skills-section {
+    max-width: 100%;
+    background: #f1f5f9;
+}
+
+.skills-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.skill-card {
+    background: white;
+    padding: 35px 20px;
+    text-align: center;
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+}
+
+.skill-card i {
+    font-size: 50px;
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    color: #0f172a;
+    margin-bottom: 5px;
+}
+
+.skill-card p {
+    color: #64748b;
+}
+
+
+/* ================= PROJECT ================= */
+
+.project-card {
+    max-width: 1000px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.10);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 40px;
+}
+
+.project-label {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+
+    background: #dbeafe;
+    color: #2563eb;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.project-content h3 {
+    font-size: 30px;
+    margin: 15px 0;
+    color: #0f172a;
+}
+
+.project-content p {
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.project-content h4 {
+    margin: 20px 0 12px;
+}
+
+.technology-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.technology-list span {
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* ================= EDUCATION ================= */
+
+.education-section {
+    background: #f8fafc;
+}
+
+.education-container {
+    max-width: 850px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.education-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.education-icon {
+    min-width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #2563eb;
+    font-size: 25px;
+}
+
+.education-card .year {
+    color: #2563eb;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.education-card h3 {
+    margin: 5px 0;
+    color: #0f172a;
+}
+
+.education-card p {
+    color: #64748b;
+}
+
+.percentage {
+    display: inline-block;
+    margin-top: 8px;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-section {
+    background: #f1f5f9;
+}
+
+.contact-container {
+    max-width: 900px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info,
+.contact-form {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.contact-info h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.contact-info > p {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.contact-item i {
+    color: #2563eb;
+    font-size: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    font-family: inherit;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #2563eb;
+}
+
+.contact-form textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+.contact-form button {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #0f172a;
+    color: white;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .home {
+        min-height: auto;
+        padding: 70px 20px;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 45px;
+    }
+
+    .home-content h2 {
+        font-size: 24px;
+    }
+
+    .home-content > p {
+        font-size: 16px;
+    }
+
+    .home-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .home-image {
+        flex: none;
+    }
+
+    .image-circle {
+        width: 280px;
+        height: 280px;
+    }
+
+    .section {
+        padding: 70px 20px;
+    }
+
+    .section-title h2 {
+        font-size: 34px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-image {
+        max-width: 350px;
+        margin: auto;
+    }
+
+    .about-info {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image img {
+        min-height: 280px;
+    }
+
+    .project-content {
+        padding: 25px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .education-card {
+        padding: 20px;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .home-content h1 {
+        font-size: 38px;
+    }
+
+    .home-content h2 {
+        font-size: 21px;
+    }
+
+    .image-circle {
+        width: 230px;
+        height: 230px;
+    }
+
+    .about-image img {
+        height: 350px;
+    }
+
+    .project-content h3 {
+        font-size: 25px;
+    }
+
+    .education-card {
+        gap: 15px;
+    }
+
+    .education-icon {
+        min-width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    
+}
+</style>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="header">
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                Portfolio.
+            </a>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#project">Project</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+    <section id="home" class="home">
+
+        <div class="home-content">
+
+            <p class="small-title">HELLO, I'M</p>
+
+            <h1>Abarna K</h1>
+
+            <h2>
+                Python <span>Full Stack Developer</span>
+            </h2>
+
+            <p>
+                B.Sc Computer Science graduate with basic knowledge of
+                HTML, CSS, JavaScript, Python and SQL. I am interested in
+                Full Stack Development and looking for an opportunity to
+                start my career in the IT field.
+            </p>
+
+            <div class="home-buttons">
+                <a href="#contact" class="btn primary-btn">
+                    Contact Me
+                </a>
+
+                <a href="./ABARNA K resume .pdf" target="_blank" class="btn secondary-btn">
+                    <i class="fa-solid fa-download"></i>
+                    Download CV
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="home-image">
+
+            <div class="image-circle">
+                <img src="./IMG-20250912-WA0048.jpg"
+                    alt="Abarna K">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section">
+
+        <div class="section-title">
+            <p>GET TO KNOW ME</p>
+            <h2>About <span>Me</span></h2>
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-image">
+                <img src="./IMG-20250912-WA0048.jpg"
+                    alt="Abarna K">
+            </div>
+
+            <div class="about-content">
+
+                <h3>Python Full Stack Developer</h3>
+
+                <p>
+                    I am Abarna K, a B.Sc Computer Science graduate withbasic knowledge of HTML, CSS, JavaScript, Python and SQL.
+                </p>
+
+                <p>
+                    I am interested in Full Stack Development and enjoy  learning new technologies. I am looking for an opportunity to start my career in the IT field and  improve my technical and professional skills.
+                </p>
+
+                <div class="about-info">
+
+                    <div>
+                        <strong>Name:</strong>
+                        <span>Abarna K</span>
+                    </div>
+
+                    <div>
+                        <strong>Degree:</strong>
+                        <span>B.Sc Computer Science</span>
+                    </div>
+
+                    <div>
+                        <strong>Role:</strong>
+                        <span>Fresher</span>
+                    </div>
+
+                    <div>
+                        <strong>Interested In:</strong>
+                        <span>Full Stack Development</span>
+                    </div>
+
+                </div>
+
+                <a href="ABARNA K resume .pdf" target="_blank" class="btn primary-btn">
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    View Resume
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" class="section skills-section">
+
+        <div class="section-title">
+            <p>WHAT I KNOW</p>
+            <h2>My <span>Skills</span></h2>
+        </div>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <i class="fa-brands fa-html5"></i>
+                <h3>HTML</h3>
+                <p>Web Page Structure</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-css3-alt"></i>
+                <h3>CSS</h3>
+                <p>Web Page Styling</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Basic Web Interaction</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-python"></i>
+                <h3>Python</h3>
+                <p>Programming & Basics</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-database"></i>
+                <h3>SQL</h3>
+                <p>Database Basics</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Frontend Development</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECT ================= -->
+    <section id="project" class="section">
+
+        <div class="section-title">
+            <p>MY WORK</p>
+            <h2>My <span>Project</span></h2>
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-image">
+
+                <img src="https://www.shutterstock.com/image-vector/how-wear-mask-260nw-2800920231.jpg"
+                    alt="Face Mask Detection">
+
+            </div>
+
+            <div class="project-content">
+
+                <span class="project-label">
+                    Final Year Project
+                </span>
+
+                <h3>Face Mask Detection System</h3>
+
+                <p>
+                    Developed an AI-based face mask detection system using
+                    deep learning to identify whether a person is wearing
+                    a mask in real time.
+                </p>
+
+                <p>
+                    The system captures live video through a webcam,
+                    detects faces and classifies them as
+                    <strong>Mask</strong> or <strong>No Mask</strong>
+                    using a trained CNN model.
+                </p>
+
+                <h4>Technologies Used</h4>
+
+                <div class="technology-list">
+                    <span>Python</span>
+                    <span>OpenCV</span>
+                    <span>TensorFlow</span>
+                    <span>Keras</span>
+                    <span>CNN</span>
+                    <span>Tkinter</span>
+                    <span>NumPy</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EDUCATION ================= -->
+    <section id="education" class="section education-section">
+
+        <div class="section-title">
+            <p>MY QUALIFICATION</p>
+            <h2>Education</h2>
+        </div>
+
+        <div class="education-container">
+
+            <div class="education-card">
+
+                <div class="education-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    <span class="year">2023 - 2026</span>
+
+                    <h3>B.Sc Computer Science</h3>
+
+                    <p>
+                        Kalaimagal College of Arts and Science
+                    </p>
+
+                    <p>
+                        Pandalkudi | Madurai Kamaraj University
+                    </p>
+
+                    <span class="percentage">
+                        85%
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <div class="education-icon">
+                    <i class="fa-solid fa-school"></i>
+                </div>
+
+                <div>
+                    <span class="year">2022 - 2023</span>
+
+                    <h3>12th - HSC</h3>
+
+                    <p>
+                        Govt High School | Pudur
+                    </p>
+
+                    <span class="percentage">
+                        74.5%
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <div class="education-icon">
+                    <i class="fa-solid fa-school"></i>
+                </div>
+
+                <div>
+                    <span class="year">2020 - 2021</span>
+
+                    <h3>10th</h3>
+
+                    <p>
+                        Hindu Nadar High School | Pudur
+                    </p>
+
+                    <span class="percentage">
+                        70%
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section contact-section">
+
+        <div class="section-title">
+            <p>GET IN TOUCH</p>
+            <h2>Contact <span>Me</span></h2>
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>Let's Connect</h3>
+
+                <p>
+                    I am looking for an opportunity to start my career
+                    in the IT field. Feel free to contact me regarding
+                    suitable fresher opportunities.
+                </p>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Your Email</span>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Your Phone Number</span>
+                </div>
+
+            </div>
+
+
+            <form class="contact-form">
+
+                <input type="text"
+                    placeholder="Your Name"
+                    required>
+
+                <input type="email"
+                    placeholder="Your Email"
+                    required>
+
+                <textarea
+                    placeholder="Your Message"
+                    required></textarea>
+
+                <button type="submit" class="btn primary-btn">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <p>
+            © 2026 Abarna K | Python Full Stack Developer
+        </p>
+
+    </footer>
+
+</body>
+</html>
